@@ -1,0 +1,27 @@
+body {
+  background: rgb(204,204,204); 
+}
+.pagina {
+  background: white;
+  display: block;
+  margin: 0 auto;
+  width: 21cm;
+  height: 29.7cm; 
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+
+.conteudo {
+	padding: 15px;
+}
+
+.titulo	{
+	font-size: 2em;
+	/*font-family: 'Indie Flower', cursive;*/
+	font-family: 'Amatic SC', cursive;
+}
+
+p {
+	font-size: 1.3em;
+	font-family: 'Amatic SC', cursive;
+}
