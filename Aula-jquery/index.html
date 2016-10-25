@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8" />
+	<title>Tabela das comidas</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles.css" media="all">
+</head>
+<body>
+	<div class="container">
+		
+		<table class="table">
+		 <thead>
+		  <tr>
+			 <th>Nome</th>
+			 <th>Comida favorita</th>
+		  </tr>
+		 </thead>
+		 <tbody>
+			<tr>
+				 <td>Leonardo</td>
+				 <td>Xis feijao</td>
+			  </tr>
+		  <tr>
+			 <td>Rosi</td>
+			 <td>couve</td>
+		  </tr>
+		  <tr>
+			 <td>Olagio</td>
+			 <td>brocolis</td>
+		  </tr>
+		  <tr>
+			 <td>Erico</td>
+			 <td>pão com ovo</td>
+		  </tr>
+		  <tr id='linha-do-toshi'>
+			 <td>Thoshiba</td>
+			 <td>catuaba + natasha</td>
+		  </tr>
+		 </tbody>
+		</table>
+		
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<script>
+		$('tbody tr').on('click', function() {
+			console.log($(this).attr('id'));
+			if($(this).attr('id') == 'linha-do-toshi') {
+				$(this).toggleClass("gelativa-tuti-fruti");
+			} else {
+				$(this).toggleClass("chuvisco-gelado");
+			}
+			
+			var opa = $(this).find('td')[0];
+			console.log("Mudando a cor de " + $(opa).html());
+		});
+	</script>
+</body>
+</html>
