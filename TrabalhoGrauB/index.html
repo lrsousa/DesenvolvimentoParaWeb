@@ -10,22 +10,21 @@
 <body>
 
   <div id='main'>
-    <article>
-      Player
-      <video src="" autoplay poster="">
+    <article id="player">
+      <video autoplay width="800" height="600" controls>
 
       </video>
     </article>
     <aside>
       Lista de Arquivos
       <ul class='playlists droppable'>
-        <li class='playlist draggable'>arquivo_01.mp3</li>
-        <li class='playlist draggable'>arquivo_02.mp3</li>
-        <li class='playlist draggable'>arquivo_03.mp3</li>
-        <li class='playlist draggable'>arquivo_04.mp3</li>
+        <li class='playlist draggable'>BBKingeEricClaptonn.m4a</li>
+        <li class='playlist draggable'>Cuck Berry.mp3</li>
+        <li class='playlist draggable'>gato.mp4</li>
+        <li class='playlist draggable'>Ney Matogrosso - Poema.mp3</li>
+        <li class='playlist draggable'>Ney Matogrosso - Sangue Latino.mp3</li>
+        <li class='playlist draggable'>Wave.wav</li>
       </ul>
-
-
     </aside>
   </div>
   <footer>
@@ -39,21 +38,30 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <script type="text/javascript">
-  $('.draggable, .droppable').sortable({
-    connectWith: '.playlists'
-  });
-
   var deselecionarItensLista = function() {
     $('ul li').each(function(index) {
       $(this).removeClass("selecionado");
     });
   };
 
+  $('.draggable, .droppable').sortable({
+    connectWith: '.playlists'
+  });
+
+  $("#player").droppable({
+    drop: function(ui, event) {
+      console.log($(event.draggable).html());
+      $("#player").html("<video src='media/" + $(event.draggable).html() + "' autoplay width='800' height='600' controls ></video>");
+    }
+  });
+
+
   $('ul li').on('click', function() {
     console.log($(this));
     deselecionarItensLista();
     $(this).addClass("selecionado");
   });
+
   </script>
 </body>
 </html>
